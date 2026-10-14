@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11100e">
+  <meta name="description" content="Faithfynphotography — wedding, portrait and event photography in Benin City, Nigeria, and destinations beyond.">
+  <title>Faithfynphotography | Weddings & Portraits</title>
+  <style>
+    :root {
+      --black: #11100e;
+      --panel: #1b1916;
+      --gold: #c9a66b;
+      --cream: #f7f1e8;
+      --muted: #b8afa3;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--cream);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; }
+    img { display: block; width: 100%; object-fit: cover; }
+    .wrap { width: min(1160px, 90%); margin: auto; }
+    .eyebrow {
+      color: var(--gold);
+      font: 11px Arial, sans-serif;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(17,16,14,.96);
+      border-bottom: 1px solid #ffffff14;
+    }
+    nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .brand {
+      font-size: 20px;
+      text-decoration: none;
+      letter-spacing: .5px;
+    }
+    .brand span { color: var(--gold); }
+    .navlinks { display: flex; gap: 24px; flex-wrap: wrap; }
+    .navlinks a {
+      font: 12px Arial, sans-serif;
+      text-decoration: none;
+      color: var(--muted);
+    }
+    .navlinks a:hover { color: var(--gold); }
+    .hero {
+      min-height: 650px;
+      display: grid;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(17,16,14,.96), rgba(17,16,14,.72) 50%, rgba(17,16,14,.12)),
+        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85") center 42%/cover;
+    }
+    .hero-content { max-width: 690px; padding: 100px 0; }
+    h1 {
+      font-size: clamp(43px, 7vw, 82px);
+      line-height: 1.06;
+      font-weight: 400;
+      margin: 18px 0;
+    }
+    h1 em { color: var(--gold); font-weight: 400; }
+    .hero p { color: #e2d8ca; max-width: 490px; }
+    .btn {
+      display: inline-block;
+      margin: 18px 12px 0 0;
+      padding: 13px 23px;
+      border: 1px solid var(--gold);
+      text-decoration: none;
+      font: 11px Arial, sans-serif;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .btn.primary { background: var(--gold); color: #17130d; }
+    .btn:hover { opacity: .8; }
+    section { padding: 90px 0; }
+    .section-head { max-width: 650px; margin-bottom: 38px; }
+    h2 { font-size: clamp(32px, 4vw, 48px); line-height: 1.2; font-weight: 400; margin: 10px 0 16px; }
+    .intro { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .photo-card { position: relative; overflow: hidden; background: var(--panel); }
+    .photo-card img { height: 390px; transition: transform .5s; }
+    .photo-card:hover img { transform: scale(1.04); }
+    .photo-caption { padding: 17px 18px 20px; }
+    .photo-caption h3 { margin: 0; font-size: 21px; font-weight: 400; }
+    .photo-caption p { color: var(--muted); font: 12px Arial, sans-serif; }
+    .story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .story img { height: 520px; }
+    .story p { color: var(--muted); }
+    .services { background: var(--panel); }
+    .service {
+      padding: 26px 22px;
+      border: 1px solid #ffffff18;
+    }
+    .service .number { color: var(--gold); font-size: 14px; }
+    .service h3 { font-size: 23px; font-weight: 400; margin: 12px 0; }
+    .service p { color: var(--muted); font-size: 15px; }
+    .quote {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+    .quote blockquote { font-size: clamp(26px, 4vw, 42px); line-height: 1.35; margin: 18px 0; }
+    .contact { background: #201b14; text-align: center; }
+    .contact p { color: #d4c8b8; }
+    .contact-details { margin-top: 28px; }
+    .contact-details a { color: var(--gold); text-decoration: none; }
+    footer { padding: 30px 0; border-top: 1px solid #ffffff18; color: var(--muted); font: 12px Arial, sans-serif; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 20;
+      padding: 13px 18px;
+      background: #237d4a;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font: 13px Arial, sans-serif;
+      box-shadow: 0 4px 20px #0006;
+    }
+    @media (max-width: 760px) {
+      .navlinks { gap: 12px; justify-content: flex-end; }
+      .navlinks a { font-size: 11px; }
+      .brand { font-size: 17px; }
+      nav { padding: 12px 0; }
+      .hero { min-height: 570px; }
+      .grid { grid-template-columns: 1fr; }
+      .photo-card img { height: 420px; }
+      .story { grid-template-columns: 1fr; gap: 25px; }
+      .story img { height: 400px; }
+      section { padding: 65px 0; }
+    }
+    @media (max-width: 420px) {
+      nav { align-items: flex-start; flex-direction: column; }
+      .navlinks { justify-content: flex-start; }
+      .photo-card img { height: 340px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#home">Faithfyn<span>photography</span></a>
+    <div class="navlinks">
+      <a href="#portfolio">Portfolio</a>
+      <a href="#about">Our Story</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-content">
+      <div class="eyebrow">Benin City · Nigeria · Worldwide</div>
+      <h1>Your story.<br>Beautifully <em>remembered.</em></h1>
+      <p>Honest moments, beautiful details and timeless photographs for love stories that deserve to be remembered for generations.</p>
+      <a class="btn primary" href="#portfolio">Explore our work</a>
+      <a class="btn" href="#contact">Enquire about your date</a>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">A collection of moments</div>
+        <h2>Stories told through photographs.</h2>
+        <p class="intro">From the quiet moments before the ceremony to the joy on the dance floor, we document the moments that make your story yours.</p>
+      </div>
+      <div class="grid">
+        <article class="photo-card">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80" alt="Wedding celebration">
+          <div class="photo-caption"><h3>White Weddings</h3><p>Love, emotion and timeless elegance</p></div>
+        </article>
+        <article class="photo-card">
+          <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=900&q=80" alt="Wedding couple portrait">
+          <div class="photo-caption"><h3>Couple Portraits</h3><p>Images that feel like you</p></div>
+        </article>
+        <article class="photo-card">
+          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80" alt="Wedding details and celebration">
+          <div class="photo-caption"><h3>Celebrations</h3><p>The details, the people, the memories</p></div>
+        </article>
+      </div>
+      <p class="intro" style="font-size:13px;margin-top:18px">Portfolio preview: these are sample images. We will replace them with Faithfynphotography's own photographs.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap story">
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85" alt="Portrait photography example">
+      <div>
+        <div class="eyebrow">The heart behind the camera</div>
+        <h2>Every photograph has a story.</h2>
+        <p>At Faithfynphotography, we believe the most meaningful photographs do more than show how a moment looked. They bring back how it felt.</p>
+        <p>Since 2016, our vision has been to preserve love, family, culture and celebration through thoughtful photography and visual storytelling.</p>
+        <p>Based in Benin City, Edo State, Nigeria, we welcome wedding and portrait enquiries from couples near and far.</p>
+        <a class="btn" href="#contact">Let's tell your story</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">What we do</div>
+        <h2>Photography for your important moments.</h2>
+        <p class="intro">Personal service, careful attention to detail and a thoughtful approach to every celebration.</p>
+      </div>
+      <div class="grid">
+        <article class="service">
+          <div class="number">01 / WEDDINGS</div>
+          <h3>Wedding Photography</h3>
+          <p>White weddings, traditional ceremonies, bridal portraits and the little moments in between.</p>
+        </article>
+        <article class="service">
+          <div class="number">02 / FILM</div>
+          <h3>Videography</h3>
+          <p>Relive the voices, movement and emotion of your celebration through meaningful films.</p>
+        </article>
+        <article class="service">
+          <div class="number">03 / PORTRAITS</div>
+          <h3>Studio & Portraits</h3>
+          <p>Portraits for individuals, couples, birthdays, families and personal milestones.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap quote">
+      <div class="eyebrow">More than a moment</div>
+      <blockquote>“The flowers fade. The music ends. Your photographs keep the memories close.”</blockquote>
+      <p class="intro">Let us preserve the moments you never want to forget.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="eyebrow">Your story starts here</div>
+      <h2>Let's make something timeless.</h2>
+      <p>Planning a wedding, portrait session or special celebration?</p>
+      <p>Tell us about your date and what you have in mind.</p>
+      <a class="btn primary" href="mailto:faithfynphotography@gmail.com?subject=Photography%20Enquiry">Email us</a>
+      <div class="contact-details">
+        <p>Email: <a href="mailto:faithfynphotography@gmail.com">faithfynphotography@gmail.com</a></p>
+        <p>Benin City, Edo State, Nigeria</p>
+        <p>265 Upper Sakponba Road · 39B Agborofo Street, off Etete GRA</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Faithfynphotography</span>
+    <span>Love stories, honestly told.</span>
+  </div>
+</footer>
+
+<!-- Replace 234XXXXXXXXXX with your WhatsApp number, including country code.
+     Example format for Nigeria: 2348012345678 (no +, spaces or dashes). -->
+<a class="whatsapp" href="https://wa.me/234XXXXXXXXXX" target="_blank" rel="noopener">Enquire on WhatsApp ↗</a>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
